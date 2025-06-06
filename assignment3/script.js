@@ -27,7 +27,9 @@ fruits.forEach((fruit) => {
     // Hide the selected fruit from the grid
     fruit.style.display = "none";
 
-    // displayedFruit.style.width = "200%"; // Enlarge it a bit
+    displayedFruit.style.width = "70%"; // Enlarge it a bit
+    displayedFruit.style.maxwidth = "180px";
+    displayedFruit.style.height = "auto";
     displayedFruit.style.cursor = "pointer";
     displayedFruit.dataset.state = "whole"; // Initialize state
     displayedFruit.classList.add("displayed-fruit");
@@ -54,6 +56,7 @@ function toggleCut() {
   // Show the associated verse
   verseText.textContent = this.dataset.verse;
   verseText.style.opacity = 1; // Fade in the text
+  verseText.style.display = "block"; // Make sure it's displayed
 
   prompt.textContent = "Start Again";
 }

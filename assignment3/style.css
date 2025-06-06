@@ -17,7 +17,7 @@ body {
 }
 #row2 {
   position: absolute;
-  bottom: 60%;
+  bottom: 65%;
 }
 
 #table {
@@ -50,7 +50,8 @@ body {
 }
 
 .fruit {
-  /* width: 40%; */
+  width: 40%;
+  max-width: 170px;
   transition: transform 0.3s;
   cursor: pointer;
 }
@@ -58,51 +59,46 @@ body {
 .fruit:hover {
   transform: scale(1.1);
 }
-/* 
-#display-area {
-  position: relative;
-  bottom: 100px;
-  height: 150px;
-  width: 150px;
-  left: 190px;
-} */
+
 .plate {
   position: relative;
   height: 100px;
-  width: 500px;
+  max-width: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.8);
-  left: 200px;
-  bottom: 130px;
+  left: 205px;
+  bottom: 140px;
   /* padding: 20px;
   margin-left: 20px; */
 }
 
 .displayed-fruit {
-  width: 200%; /* Ensure all displayed fruits are the same size */
-  /* height: 220px; Ensure height consistency */
+  width: 100%; /* Consistent sizing relative to plate */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 180px;
 }
 
 .cut-fruit {
-  width: 250%; /* Ensure same size for cut images */
-  height: 120%; /* Ensure height consistency */
+  width: 100%;
+  max-width: 180px;
 }
 
 .verse-text {
-  display: none;
-  position: absolute;
-  top: 10%;
-  width: 80%;
-  color: white;
+  width: 600px;
+  /* display: none; */
+  /* position: relative; */
+  /* top: 10%; */
+  color: rgb(7, 20, 103);
   font-size: 20px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.5);
+  /* background: rgba(0, 0, 0, 0.5); */
   padding: 10px;
   border-radius: 10px;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+  margin-top: 120px;
 }
 
 #choose-another {
@@ -145,14 +141,14 @@ body {
 /* Set proper position for the fruits */
 #fruit1 {
   position: relative;
-  width: 35%;
-  bottom: -6px;
+  width: 30%;
+  bottom: -15px;
 }
 
 #fruit2 {
   position: relative;
-  width: 19%;
-  bottom: 20px;
+  width: 24%;
+  bottom: 10px;
 }
 
 #fruit3 {
@@ -194,6 +190,6 @@ body {
 #fruit9 {
   width: 30%;
   position: relative;
-  left: -25px;
-  bottom: 6px;
+  left: -20px;
+  bottom: 0px;
 }
