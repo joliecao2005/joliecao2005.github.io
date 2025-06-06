@@ -29,11 +29,11 @@ h1 {
 
 #row1 {
   position: absolute;
-  bottom: 95%;
+  bottom: 85%;
 }
 #row2 {
   position: absolute;
-  bottom: 65%;
+  bottom: 60%;
 }
 
 #table {
@@ -102,7 +102,7 @@ h1 {
 }
 
 .verse-text {
-  width: 600px;
+  width: 650px;
   /* display: none; */
   /* position: relative; */
   top: 10%;
@@ -114,7 +114,7 @@ h1 {
   border-radius: 10px;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 #choose-another {
@@ -137,9 +137,10 @@ h1 {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background: #f4c897;
+  background: #d3ffae;
+  border: #244a01;
   padding: 5px 10px;
-  border: none;
+  /* border: none; */
   border-radius: 5px;
   cursor: pointer;
 }
@@ -167,7 +168,7 @@ h1 {
 #fruit2 {
   position: relative;
   width: 24%;
-  bottom: 10px;
+  bottom: 8px;
 }
 
 #fruit3 {
@@ -211,4 +212,28 @@ h1 {
   position: relative;
   left: -20px;
   bottom: 0px;
+}
+
+#c-button {
+  width: 30px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: #d3ffae;
+  border: #244a01;
+  /* padding: 15px 20px; */
+  /* border: none; */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#copyright {
+  text-align: center;
+  padding: 60px;
+  width: 600px;
+  margin: 120px;
+  font-size: 1rem;
+  font-size: 1rem;
+  color: rgb(6, 59, 84);
+  text-align: center;
 }

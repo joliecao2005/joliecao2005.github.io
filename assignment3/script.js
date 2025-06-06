@@ -1,6 +1,11 @@
+// My choice of concept is
 const fruits = document.querySelectorAll(".fruit");
+console.log(fruits);
+// This is the Start again button for reset all. The users can choose another fruit when they finish one round
 const chooseAnotherButton = document.getElementById("choose-another");
+// This is the prompt at the bottom at the page. It will be changed according to the interaction
 const prompt = document.getElementById("prompt");
+// Display area is for the empty space on the right where one fruit is ultimately chosen.
 const displayArea = document.getElementById("display-area");
 const verseText = document.getElementById("verse");
 const backgroundMusic = document.getElementById("background-music");
@@ -10,6 +15,8 @@ const muteIcon = document.getElementById("mute-icon");
 console.log(muteIcon);
 const popSound = document.getElementById("pop-sound");
 const cutSound = document.getElementById("cut-sound");
+const copyrightButton = document.getElementById("copyright");
+console.log(copyrightButton);
 
 let isMuted = false;
 backgroundMusic.play();
