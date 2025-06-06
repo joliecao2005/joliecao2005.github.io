@@ -36,6 +36,7 @@ muteToggleButton.addEventListener("click", function () {
     : "https://img.icons8.com/metro/26/high-volume.png";
 });
 
+// The clicking action here is quite nice for me to connect with the picking and cutting fruit. Because it associates with some kind of games too, especially cooking game when users can just easily click and click on the screen and the interaction happens. It's easy, fun, and quick to follow.
 fruits.forEach((fruit) => {
   fruit.addEventListener("click", function () {
     if (fruitSelected) return; // Prevent choosing more than one fruit. Only one fruit can be picked per round. For this simple little game, only only bible verse is shown, so they should start again if they wish to pick another fruit.
