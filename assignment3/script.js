@@ -25,8 +25,8 @@ muteToggleButton.addEventListener("click", function () {
 
   // Toggle icon
   muteToggleButton.querySelector("img").src = isMuted
-    ? "https://img.icons8.com/metro/26/high-volume.png"
-    : "https://img.icons8.com/ios-filled/50/mute--v1.png";
+    ? "https://img.icons8.com/ios-filled/50/mute--v1.png"
+    : "https://img.icons8.com/metro/26/high-volume.png";
 });
 
 fruits.forEach((fruit) => {
