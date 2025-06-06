@@ -1,65 +1,73 @@
-// document.addEventListener("DOMContentLoaded", function () {
 const fruits = document.querySelectorAll(".fruit");
-console.log(fruits);
-const chooseAnotherButton = document.querySelector("#pick-another");
-console.log(chooseAnotherButton);
-const prompt = document.querySelector("#prompt");
-console.log(prompt);
-const displayArea = document.getElementById("display-area"); // Reference to display area
+const chooseAnotherButton = document.getElementById("choose-another");
+const prompt = document.getElementById("prompt");
+const displayArea = document.getElementById("display-area");
+const verseText = document.getElementById("verse");
+const backgroundMusic = document.getElementById("background-music");
+const muteToggleButton = document.getElementById("mute-toggle");
+const popSound = document.getElementById("pop-sound");
+const cutSound = document.getElementById("cut-sound");
+
+backgroundMusic.play();
+backgroundMusic.loop = true;
+
+let isMuted = false;
+let fruitSelected = false;
 
 fruits.forEach((fruit) => {
   fruit.addEventListener("click", function () {
-    // Hide all fruits except the selected one
-    fruits.forEach((f) => (f.style.display = "none")); // Hide the other fruits
+    if (fruitSelected) return; // Prevent choosing more than one fruit
 
-    // Clone the selected fruit and add it to the display area
-    // const displayedFruit = fruit.cloneNode(true);
+    fruitSelected = true;
 
-    fruit.style.display = "block"; // Display the selected fruit only
-    fruit.style.width = "300px"; // Make the selected fruit larger
-    fruit.style.gridColumnStart = 1; // Position it in the center
-    fruit.style.gridColumnEnd = 4;
+    popSound.play();
+    // Clone the fruit and display it on the right
+    const displayedFruit = fruit.cloneNode(true);
 
-    // Clear previous content and append the cloned fruit
-    // displayArea.innerHTML = "";
-    // displayArea.appendChild(displayedFruit);
+    // Hide the selected fruit from the grid
+    fruit.style.display = "none";
 
-    document.body.style.backgroundImage =
-      "url('https://img.freepik.com/premium-vector/garden-wood-table-icon-cartoon-garden-wood-table-vector-icon-web-design-isolated-white-background_98402-49702.jpg?semt=ais_hybrid&w=740')";
+    // displayedFruit.style.width = "200%"; // Enlarge it a bit
+    displayedFruit.style.cursor = "pointer";
+    displayedFruit.dataset.state = "whole"; // Initialize state
+    displayedFruit.classList.add("displayed-fruit");
+    displayedFruit.onclick = toggleCut;
 
-    // Set the onclick event to toggle cutting the fruit
-    fruit.onclick = toggleFruit;
+    displayArea.innerHTML = ""; // Clear previous content
+    displayArea.appendChild(displayedFruit); // Move to display area
 
-    // Display the "Choose Another Fruit" button
-    chooseAnotherButton.style.display = "block";
     prompt.style.display = "block";
     prompt.textContent = "Click to cut";
+
+    chooseAnotherButton.style.display = "block";
   });
 });
-function toggleFruit() {
-  if (this.dataset.state === "cut") {
-    this.src = this.dataset.whole;
-    this.dataset.state = "whole";
-    prompt.textContent = "Click to cut";
-  } else {
-    this.src = this.dataset.cut;
-    this.dataset.state = "cut";
-    prompt.textContent = "Click to uncut";
-  }
+
+function toggleCut() {
+  cutSound.play();
+
+  this.src = this.dataset.cut;
+  this.dataset.state = "cut";
+  this.classList.remove("displayed-fruit"); // Remove previous styling class
+  this.classList.add("cut-fruit"); // Add new styling class for consistency
+
+  // Show the associated verse
+  verseText.textContent = this.dataset.verse;
+  verseText.style.opacity = 1; // Fade in the text
+
+  prompt.textContent = "Start Again";
 }
 
-chooseAnotherButton.addEventListener("click", resetFruit);
+chooseAnotherButton.addEventListener("click", function () {
+  location.reload(); // Reload the page to reset
+});
 
-function resetFruit() {
-  fruits.forEach((fruit) => {
-    fruit.style.display = "block";
-    fruit.style.width = "";
-    fruit.style.gridColumnStart = "";
-    fruit.style.gridColumnEnd = "";
-    fruit.dataset.state = "whole";
-    fruit.src = fruit.dataset.whole; // Reset to the whole fruit image
-  });
-  chooseAnotherButton.style.display = "none";
-  document.body.style.backgroundImage = "none";
-}
-// });
+muteToggleButton.addEventListener("click", function () {
+  isMuted = !isMuted;
+  backgroundMusic.muted = isMuted;
+  popSound.muted = isMuted;
+  cutSound.muted = isMuted;
+
+  // Toggle icon
+  muteToggleButton.src = isMuted ? "unmute-icon.png" : "mute-icon.png";
+});

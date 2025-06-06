@@ -9,88 +9,118 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <audio id="background-music" loop autoplay>
+      <source src="your-music-file.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="pop-sound">
+      <source src="pop-sound.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="cut-sound">
+      <source src="cut-sound.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div id="sky">
+      <div id="verse" class="verse-text"></div>
+    </div>
+
+    <div id="table">
+      <img src="table.png" alt="Table" />
+    </div>
     <div id="fruit-gallery" class="bowl">
       <!-- First row with 2 fruits -->
-      <img
-        src="fruit1.jpg"
-        alt="Fruit 1"
-        class="fruit"
-        data-whole="fruit1.jpg"
-        data-cut="fruit1-cut.jpg"
-      />
-      <img
-        src="fruit2.jpg"
-        alt="Fruit 2"
-        class="fruit"
-        data-whole="fruit2.jpg"
-        data-cut="fruit2-cut.jpg"
-      />
+      <div id="row1" class="fruitrow">
+        <img
+          id="fruit1"
+          src="banana.png"
+          alt="Fruit 1"
+          class="fruit"
+          data-whole="banana.png"
+          data-cut="banana-cut.png"
+          data-verse=""
+        />
+        <img
+          id="fruit2"
+          src="pineapple.png"
+          alt="Fruit 2"
+          class="fruit"
+          data-whole="pineapple.png"
+          data-cut="pineapple-cut.png"
+        />
+      </div>
+      <div id="row2" class="fruitrow">
+        <!-- Second row with 3 fruits -->
+        <img
+          id="fruit3"
+          src="peach.png"
+          alt="Fruit 3"
+          class="fruit"
+          data-whole="peach.png"
+          data-cut="peach-cut.png"
+        />
+        <img
+          id="fruit4"
+          src="apple.png"
+          alt="Fruit 4"
+          class="fruit"
+          data-whole="apple.png"
+          data-cut="apple-cut.png"
+        />
+        <img
+          id="fruit5"
+          src="grapes.png"
+          alt="Fruit 5"
+          class="fruit"
+          data-whole="grapes.png"
+          data-cut="grapes-cut.png"
+        />
+      </div>
 
-      <!-- Second row with 3 fruits -->
-      <img
-        src="fruit3.jpg"
-        alt="Fruit 3"
-        class="fruit"
-        data-whole="fruit3.jpg"
-        data-cut="fruit3-cut.jpg"
-      />
-      <img
-        src="fruit4.jpg"
-        alt="Fruit 4"
-        class="fruit"
-        data-whole="fruit4.jpg"
-        data-cut="fruit4-cut.jpg"
-      />
-      <img
-        src="fruit5.jpg"
-        alt="Fruit 5"
-        class="fruit"
-        data-whole="fruit5.jpg"
-        data-cut="fruit5-cut.jpg"
-      />
-
-      <!-- Third row with 4 fruits -->
-      <img
-        src="fruit6.jpg"
-        alt="Fruit 6"
-        class="fruit"
-        data-whole="fruit6.jpg"
-        data-cut="fruit6-cut.jpg"
-      />
-      <img
-        src="fruit7.jpg"
-        alt="Fruit 7"
-        class="fruit"
-        data-whole="fruit7.jpg"
-        data-cut="fruit7-cut.jpg"
-      />
-      <img
-        src="fruit8.jpg"
-        alt="Fruit 8"
-        class="fruit"
-        data-whole="fruit8.jpg"
-        data-cut="fruit8-cut.jpg"
-      />
-      <img
-        src="fruit9.jpg"
-        alt="Fruit 9"
-        class="fruit"
-        data-whole="fruit9.jpg"
-        data-cut="fruit9-cut.jpg"
-      />
+      <div id="row3" class="fruitrow">
+        <!-- Third row with 4 fruits -->
+        <img
+          id="fruit6"
+          src="strawberry.png"
+          alt="Fruit 6"
+          class="fruit"
+          data-whole="strawberry.png"
+          data-cut="strawberry-cut.png"
+        />
+        <img
+          id="fruit7"
+          src="orange.png"
+          alt="Fruit 7"
+          class="fruit"
+          data-whole="orange.png"
+          data-cut="orange-cut.png"
+        />
+        <img
+          id="fruit8"
+          src="pear.png"
+          alt="Fruit 8"
+          class="fruit"
+          data-whole="pear.png"
+          data-cut="pear-cut.png"
+        />
+        <img
+          id="fruit9"
+          src="lemon.png"
+          alt="Fruit 9"
+          class="fruit"
+          data-whole="lemon.png"
+          data-cut="lemon-cut.png"
+        />
+      </div>
     </div>
     <div id="display-area" class="plate">
       <!-- Positioned space for the selected fruit -->
     </div>
-    <button id="choose-another" style="display: none">
-      Choose Another Fruit
+
+    <button id="choose-another">Start Again</button>
+    <button id="mute-toggle" class="mute-button">
+      <img id="mute-icon" src="mute-icon.png" alt="Mute Icon" width="20" />
     </button>
-    <button id="mute-toggle" class="mute-button">Mute</button>
-    <div id="prompt" style="display: none">Click to cut</div>
-    <audio id="background-music" loop>
-      <source src="background-music.mp3" type="audio/mpeg" />
-      Your browser does not support the audio element.
-    </audio>
-    <script src="script.js"></script>
+
+    <div id="prompt" class="prompt">Click to choose a fruit</div>
   </body>
 </html>
