@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Barriecito", system-ui;
   display: flex;
   justify-content: space-between; /* Arrange bowl and plate areas */
   align-items: center;
@@ -67,7 +67,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.8);
+  /* background-color: rgba(255, 255, 255, 0.8); */
   left: 205px;
   bottom: 140px;
   /* padding: 20px;
@@ -90,8 +90,8 @@ body {
   /* display: none; */
   /* position: relative; */
   /* top: 10%; */
-  color: rgb(7, 20, 103);
-  font-size: 20px;
+  color: rgb(0, 47, 69);
+  font-size: 1.6rem;
   text-align: center;
   /* background: rgba(0, 0, 0, 0.5); */
   padding: 10px;
@@ -102,13 +102,15 @@ body {
 }
 
 #choose-another {
+  position: absolute;
+  bottom: 12%;
+  text-align: center;
+
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   display: none;
-  position: absolute;
-  bottom: 20px;
-  right: 60px;
+
   border: none;
   border-radius: 8px;
   display: none;
@@ -127,7 +129,7 @@ body {
 
 #prompt {
   position: absolute;
-  bottom: 20%;
+  bottom: 12%;
   text-align: center;
   width: 100%;
   opacity: 0.6;
@@ -135,7 +137,7 @@ body {
   border-radius: 5px;
   font-size: 16px;
   text-align: center;
-  display: none;
+  /* display: none; */
 }
 
 /* Set proper position for the fruits */

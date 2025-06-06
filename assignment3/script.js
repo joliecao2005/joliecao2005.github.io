@@ -40,8 +40,6 @@ fruits.forEach((fruit) => {
 
     prompt.style.display = "block";
     prompt.textContent = "Click to cut";
-
-    chooseAnotherButton.style.display = "block";
   });
 });
 
@@ -57,8 +55,8 @@ function toggleCut() {
   verseText.textContent = this.dataset.verse;
   verseText.style.opacity = 1; // Fade in the text
   verseText.style.display = "block"; // Make sure it's displayed
-
-  prompt.textContent = "Start Again";
+  chooseAnotherButton.style.display = "block";
+  prompt.style.display = "block";
 }
 
 chooseAnotherButton.addEventListener("click", function () {
