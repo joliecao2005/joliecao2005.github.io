@@ -16,7 +16,7 @@
   </head>
   <body>
     <audio id="background-music" loop autoplay>
-      <source src="your-music-file.mp3" type="audio/mpeg" />
+      <source src="instrumental.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
     <audio id="pop-sound">
@@ -25,14 +25,17 @@
     <audio id="cut-sound">
       <source src="cut-sound.mp3" type="audio/mpeg" />
     </audio>
-
-    <div id="sky">
-      <div id="verse" class="verse-text"></div>
+    <div id="text">
+      <h1>FRUITS OF THE SPIRIT</h1>
+      <div id="sky">
+        <div id="verse" class="verse-text"></div>
+      </div>
     </div>
 
     <div id="table">
       <img src="table.png" alt="Table" />
     </div>
+
     <div id="fruit-gallery" class="bowl">
       <!-- First row with 2 fruits -->
       <div id="row1" class="fruitrow">
@@ -43,7 +46,7 @@
           class="fruit"
           data-whole="banana.png"
           data-cut="banana-cut.png"
-          data-verse="LOVE My commandment is this: love one another, just as I love you. John 15:12 GNT"
+          data-verse="My commandment is this: love one another, just as I love you. John 15:12 GNT"
         />
         <img
           id="fruit2"
@@ -52,7 +55,7 @@
           class="fruit"
           data-whole="pineapple.png"
           data-cut="pineapple-cut.png"
-          data-verse="JOY You that are righteous, be glad and rejoice
+          data-verse="You that are righteous, be glad and rejoice
 because of what the LORD has done.
 You that obey him, shout for joy! Psalm 32:11 GNT"
         />
@@ -66,7 +69,7 @@ You that obey him, shout for joy! Psalm 32:11 GNT"
           class="fruit"
           data-whole="peach.png"
           data-cut="peach-cut.png"
-          data-verse="PEACE You must turn away from evil and do good; you must strive for peace with all your heart. 1 Peter 3:11 GNT"
+          data-verse=" You must turn away from evil and do good; you must strive for peace with all your heart. 1 Peter 3:11 GNT"
         />
         <img
           id="fruit4"
@@ -75,7 +78,7 @@ You that obey him, shout for joy! Psalm 32:11 GNT"
           class="fruit"
           data-whole="apple.png"
           data-cut="apple-cut.png"
-          data-verse="PATIENCE Hot tempers cause arguments, but patience brings peace. Proverbs 15:18 GNT"
+          data-verse="Hot tempers cause arguments, but patience brings peace. Proverbs 15:18 GNT"
         />
         <img
           id="fruit5"
@@ -84,7 +87,7 @@ You that obey him, shout for joy! Psalm 32:11 GNT"
           class="fruit"
           data-whole="grapes.png"
           data-cut="grapes-cut.png"
-          data-verse="KINDNESS Be kind and tender-hearted to one another, and forgive one another, as God has forgiven you through Christ.  Ephesians 4:32 GNT"
+          data-verse=" Be kind and tender-hearted to one another, and forgive one another, as God has forgiven you through Christ.  Ephesians 4:32 GNT"
         />
       </div>
 
@@ -97,7 +100,7 @@ You that obey him, shout for joy! Psalm 32:11 GNT"
           class="fruit"
           data-whole="strawberry.png"
           data-cut="strawberry-cut.png"
-          data-verse="GOODNESS
+          data-verse="
 So then, as often as we have the chance, we should do good to everyone, and especially to those who belong to our family in the faith.
 
 Galatians 6:10 GNT"
@@ -109,7 +112,7 @@ Galatians 6:10 GNT"
           class="fruit"
           data-whole="orange.png"
           data-cut="orange-cut.png"
-          data-verse="FAITHFULNESS
+          data-verse="
 “Well done, you good and faithful servant! said his master. You have been faithful in managing small amounts, so I will put you in charge of large amounts. Come on in and share my happiness!’”
 
 Matthew 25:23 GNT"
@@ -121,7 +124,7 @@ Matthew 25:23 GNT"
           class="fruit"
           data-whole="pear.png"
           data-cut="pear-cut.png"
-          data-verse="HUMILITY
+          data-verse="
 “The grace that God gives is even stronger. As the scripture says, God resists the proud, but gives grace to the humble. ”
 
 James 4:6 GNT"
@@ -133,7 +136,7 @@ James 4:6 GNT"
           class="fruit"
           data-whole="lemon.png"
           data-cut="lemon-cut.png"
-          data-verse="SELF-CONTROL
+          data-verse="
 It is better to be patient than powerful. It is better to win control over yourself than over whole cities.
 
 Proverbs 16:32 GNT
@@ -148,7 +151,12 @@ Proverbs 16:32 GNT
 
     <button id="choose-another">Start Again</button>
     <button id="mute-toggle" class="mute-button">
-      <img id="mute-icon" src="mute-icon.png" alt="Mute Icon" width="20" />
+      <img
+        id="mute-icon"
+        src="https://img.icons8.com/ios-filled/50/mute--v1.png"
+        alt="Mute Icon"
+        width="20"
+      />
     </button>
 
     <div id="prompt" class="prompt">Click to choose a fruit</div>

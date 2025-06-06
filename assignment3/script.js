@@ -4,15 +4,30 @@ const prompt = document.getElementById("prompt");
 const displayArea = document.getElementById("display-area");
 const verseText = document.getElementById("verse");
 const backgroundMusic = document.getElementById("background-music");
+console.log(backgroundMusic);
 const muteToggleButton = document.getElementById("mute-toggle");
+const muteIcon = document.getElementById("mute-icon");
+console.log(muteIcon);
 const popSound = document.getElementById("pop-sound");
 const cutSound = document.getElementById("cut-sound");
 
+let isMuted = false;
 backgroundMusic.play();
 backgroundMusic.loop = true;
 
-let isMuted = false;
 let fruitSelected = false;
+
+muteToggleButton.addEventListener("click", function () {
+  isMuted = !isMuted;
+  backgroundMusic.muted = isMuted;
+  popSound.muted = isMuted;
+  cutSound.muted = isMuted;
+
+  // Toggle icon
+  muteToggleButton.querySelector("img").src = isMuted
+    ? "https://img.icons8.com/metro/26/high-volume.png"
+    : "https://img.icons8.com/ios-filled/50/mute--v1.png";
+});
 
 fruits.forEach((fruit) => {
   fruit.addEventListener("click", function () {
@@ -56,19 +71,9 @@ function toggleCut() {
   verseText.style.opacity = 1; // Fade in the text
   verseText.style.display = "block"; // Make sure it's displayed
   chooseAnotherButton.style.display = "block";
-  prompt.style.display = "block";
+  prompt.style.display = "none";
 }
 
 chooseAnotherButton.addEventListener("click", function () {
   location.reload(); // Reload the page to reset
-});
-
-muteToggleButton.addEventListener("click", function () {
-  isMuted = !isMuted;
-  backgroundMusic.muted = isMuted;
-  popSound.muted = isMuted;
-  cutSound.muted = isMuted;
-
-  // Toggle icon
-  muteToggleButton.src = isMuted ? "unmute-icon.png" : "mute-icon.png";
 });
