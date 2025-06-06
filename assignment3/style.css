@@ -1,7 +1,14 @@
+/* The styling of the website is supposed to be relaxing, peaceful, and may bring the users into meditation. Or at least feeling calm and a bit of joyful. The design is playful and slightly exciting as it follows a game theme. All the illustrations were thoughtfully sourced in a same style to maintain the look of the website, because there are many different elements so they should maintain the cohesion. */
+/* The font choice is playful as for the heading because it's like a welcome for users to start the interactivity. Once it goes to an end, when the text ultimately appears, I used another font which brings calmness to the eyes and also supports the encouring meaning of the bible verses. The contrast in colour makes it easy to read and the text on the background of nature is very soothing. */
+/* While the bible verses - text part - bring peace, the main interaction with the fruits are exciting with colourful elements. This contrast enhances the experience of healing. Learning is not that boring.  */
+/* The fruit is slightly pop up when hovering to indicate that it is clickable and there is also a little prompt at the bottom of the page for instruction. Correspoding sound effects support the excitement of this little game. */
+/* Once the fruit is chosen, it appears onto the plate and is ready to be clicked on to be cut. Once it is cut, the corresponding bible verse appears in the sky area of the background. */
+/* With the choice of GIF as background, it helps a lot in bringing the liveliness and also works well with the background music. */
+/* Also, I worked on a lot with the position of the fruits as I don't them to look fake upon a bowl. Initially, they looked quite distant from one another, so I figured it out to let them stay close by, even after being chosen and taken out of the original spot. */
 body {
   font-family: "Barriecito", system-ui;
   display: flex;
-  justify-content: space-between; /* Arrange bowl and plate areas */
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   height: 100vh;
@@ -102,12 +109,15 @@ h1 {
 }
 
 .verse-text {
+  font-family: "Edu QLD Hand", cursive;
+  /* font-family: "Winky Rough", sans-serif; */
   width: 650px;
   /* display: none; */
   /* position: relative; */
   top: 10%;
   color: rgb(0, 47, 69);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 450;
   text-align: center;
   /* background: rgba(0, 0, 0, 0.5); */
   /* padding: 10px; */
@@ -134,10 +144,11 @@ h1 {
 }
 
 .mute-button {
+  width: 40px;
   position: absolute;
   bottom: 20px;
-  right: 20px;
-  background: #d3ffae;
+  right: 60px;
+  background: #6eb7ab;
   border: #244a01;
   padding: 5px 10px;
   /* border: none; */
@@ -218,8 +229,8 @@ h1 {
   width: 30px;
   position: absolute;
   bottom: 20px;
-  left: 20px;
-  background: #d3ffae;
+  right: 20px;
+  background: #6eb7ab;
   border: #244a01;
   /* padding: 15px 20px; */
   /* border: none; */
@@ -228,7 +239,6 @@ h1 {
 }
 
 #copyright {
-  text-align: center;
   padding: 60px;
   width: 600px;
   margin: 120px;
@@ -237,3 +247,11 @@ h1 {
   color: rgb(6, 59, 84);
   text-align: center;
 }
+/* 
+#organise {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: flex-end;
+} */

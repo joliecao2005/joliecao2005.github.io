@@ -1,4 +1,4 @@
-// My choice of concept is
+// My choice of concept is fun learning website with a game theme. It reveals a bible verse for people to read and memorize, also a way to have a daily reminder. It engages users with playful interaction with peaceful and lovely sound experience as well. There is background music, which is soft but uplifting enough. The sound effects of popping and cutting sound during interaction enhance the smoothness of the experience. On the other hand, there is an option to mute the sounds.
 const fruits = document.querySelectorAll(".fruit");
 console.log(fruits);
 // This is the Start again button for reset all. The users can choose another fruit when they finish one round
@@ -38,30 +38,29 @@ muteToggleButton.addEventListener("click", function () {
 
 fruits.forEach((fruit) => {
   fruit.addEventListener("click", function () {
-    if (fruitSelected) return; // Prevent choosing more than one fruit
+    if (fruitSelected) return; // Prevent choosing more than one fruit. Only one fruit can be picked per round. For this simple little game, only only bible verse is shown, so they should start again if they wish to pick another fruit.
 
     fruitSelected = true;
 
-    popSound.play();
-    // Clone the fruit and display it on the right
+    popSound.play(); // Sound effect plays accordingly
     const displayedFruit = fruit.cloneNode(true);
 
-    // Hide the selected fruit from the grid
+    // Hide the selected fruit from the bowl
     fruit.style.display = "none";
 
-    displayedFruit.style.width = "70%"; // Enlarge it a bit
+    displayedFruit.style.width = "70%";
     displayedFruit.style.maxwidth = "180px";
     displayedFruit.style.height = "auto";
     displayedFruit.style.cursor = "pointer";
-    displayedFruit.dataset.state = "whole"; // Initialize state
-    displayedFruit.classList.add("displayed-fruit");
+    displayedFruit.dataset.state = "whole";
+    displayedFruit.classList.add("displayed-fruit"); // Add the styling for displayed fruits. There were certain ways I did the styling to maintain the sizing and positions (placement)
     displayedFruit.onclick = toggleCut;
 
-    displayArea.innerHTML = ""; // Clear previous content
-    displayArea.appendChild(displayedFruit); // Move to display area
+    displayArea.innerHTML = "";
+    displayArea.appendChild(displayedFruit);
 
     prompt.style.display = "block";
-    prompt.textContent = "Click to cut";
+    prompt.textContent = "Click to cut"; //The prompt changes when action is taken
   });
 });
 
@@ -71,16 +70,16 @@ function toggleCut() {
   this.src = this.dataset.cut;
   this.dataset.state = "cut";
   this.classList.remove("displayed-fruit"); // Remove previous styling class
-  this.classList.add("cut-fruit"); // Add new styling class for consistency
+  this.classList.add("cut-fruit"); // Again styling
 
-  // Show the associated verse
+  // Show the verse
   verseText.textContent = this.dataset.verse;
-  verseText.style.opacity = 1; // Fade in the text
+  verseText.style.opacity = 1; // Fade in the text because it's in the sky so the transition is better and suitable to reveal the text
   verseText.style.display = "block"; // Make sure it's displayed
   chooseAnotherButton.style.display = "block";
   prompt.style.display = "none";
 }
 
 chooseAnotherButton.addEventListener("click", function () {
-  location.reload(); // Reload the page to reset
+  location.reload(); // Reload the page
 });
