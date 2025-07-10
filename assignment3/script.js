@@ -8,6 +8,8 @@ const prompt = document.getElementById("prompt");
 // Display area is for the empty space on the right where one fruit is ultimately chosen.
 const displayArea = document.getElementById("display-area");
 const verseText = document.getElementById("verse");
+// const fruitName = document.getElementById("title");
+const title = document.getElementById("title");
 const backgroundMusic = document.getElementById("background-music");
 console.log(backgroundMusic);
 const muteToggleButton = document.getElementById("mute-toggle");
@@ -72,6 +74,9 @@ function toggleCut() {
   this.dataset.state = "cut";
   this.classList.remove("displayed-fruit"); // Remove previous styling class
   this.classList.add("cut-fruit"); // Again styling
+
+  // Show the Fruit name
+  title.textContent = this.dataset.title;
 
   // Show the verse
   verseText.textContent = this.dataset.verse;
