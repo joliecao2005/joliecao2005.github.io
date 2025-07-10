@@ -8,7 +8,7 @@ const prompt = document.getElementById("prompt");
 // Display area is for the empty space on the right where one fruit is ultimately chosen.
 const displayArea = document.getElementById("display-area");
 const verseText = document.getElementById("verse");
-// const fruitName = document.getElementById("title");
+const bookName = document.getElementById("book");
 const title = document.getElementById("title");
 const backgroundMusic = document.getElementById("background-music");
 console.log(backgroundMusic);
@@ -84,6 +84,10 @@ function toggleCut() {
   verseText.style.display = "block"; // Make sure it's displayed
   chooseAnotherButton.style.display = "block";
   prompt.style.display = "none";
+
+  bookName.textContent = this.dataset.book;
+  bookName.style.opacity = 1; // Fade in the text because it's in the sky so the transition is better and suitable to reveal the text
+  bookName.style.display = "block"; // Make sure it's displayed
 }
 
 chooseAnotherButton.addEventListener("click", function () {
